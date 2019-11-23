@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>NCHUMIS_Breakfast</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <label>姓名：</label>
+  <input id="a1"><br/>  
+  <label>餐點：</label>
+  <input id="a2"><br/>
+  <label>數量：</label>
+  <input id="a3"><br/>
+  <button id="b">確認</button>
+</body>
+</html>
+<script>
+$(function() {
+  var $a1 = $('#a1'),
+    $a2 = $('#a2'),
+    $a3 = $('#a3'),
+    $b = $('#b'),
+    a = {};
+  $b.on('click', function() {
+  alert("訂單收到")
+    a = {
+        data: $a1.val()+','+ $a2.val()+','+$a3.val(),
+        sheetUrl: 'https://docs.google.com/spreadsheets/d/1Ox2E6zRF7jURaBaa9m_RFGnC6gbvYYkmr7ftRCWdCWI/edit#gid=0',
+        sheetTag: '工作表1'
+    };
+    console.log(a);
+    <!-- $.get('https://script.google.com/macros/s/AKfycbxUrQkVMNJXvOxWG0Z_gioPLX826C0WB64BTC1F/exec', a); -->
+  });
+});
+</script>
